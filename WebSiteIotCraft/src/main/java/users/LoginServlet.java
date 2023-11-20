@@ -10,16 +10,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Myservlet
+ * Servlet implementation class LginServlet
  */
-//@WebServlet("/Myservlet")
-public class Myservlet extends HttpServlet {
+//@WebServlet("/LginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Myservlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,26 +36,24 @@ public class Myservlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		
-		String Fname=request.getParameter("FirstName");
-		String Lname=request.getParameter("LastName");
 		String Email=request.getParameter("email");
 		String Password=request.getParameter("Password");
+		
 		String hashedPassword = BCrypt.hashpw(Password, BCrypt.gensalt());
-		
-		
-		USER user = new USER(Fname, Lname, Email, hashedPassword);
+
+		USER user = new USER(Email, hashedPassword);
 		USERDaoImpl member = new USERDaoImpl();
-        if (member.emailExists(user.getEmail())) {
-            // If the email exists, redirect to the sign-in page
-            response.sendRedirect("/WebSiteIotCraft/SignIn.jsp");
-        } else {
-            // If the email doesn't exist, proceed with user registration
-            member.adduser(user);
-            // Redirect to the sign-in success page
-            response.sendRedirect("/WebSiteIotCraft/SignIn.jsp");
-        }
+
 		
+		 if (member.userExists(user.getEmail(),user.getPassword())) {
+	            // User exists, redirect to home
+	            response.sendRedirect("/WebSiteIotCraft/Home.jsp"); 
+	        } else {
+	            // User does not exist, redirect to sign up form
+	            response.sendRedirect("/WebSiteIotCraft/SignUp.jsp");
+	        }
 	}
 
 }
