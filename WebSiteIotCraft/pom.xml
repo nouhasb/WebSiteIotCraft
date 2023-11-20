@@ -26,6 +26,19 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.23</version> <!-- Use the version you are working with -->
     </dependency>
+
+
+<dependency>
+	<groupId>de.svenkubiak</groupId>
+	<artifactId>jBCrypt</artifactId>
+	<version>0.4.3</version>
+</dependency>
+<dependency>
+    <groupId>org.mindrot</groupId>
+    <artifactId>jbcrypt</artifactId>
+    <version>0.4</version>
+</dependency>
+
 </dependencies>
 
   <packaging>war</packaging>

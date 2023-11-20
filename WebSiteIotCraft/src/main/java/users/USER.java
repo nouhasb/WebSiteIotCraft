@@ -10,6 +10,13 @@ public class USER {
 	public USER() {
 		super();
 	}
+	
+	public USER(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
 	public USER(String fname, String lname, String email, String password) {
 		super();
 		this.fname = fname;
