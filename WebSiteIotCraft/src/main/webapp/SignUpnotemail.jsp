@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign up form</title>
 <link rel="icon" type="image/x-icon" href="/logo">
-<link rel="stylesheet" href="Sign.css">
+<link rel="stylesheet" href="emailexist.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -18,15 +18,15 @@
          </div>
          
         
-        <form action="SearchSer" method="get" class="search">
+         <form action="SearchSer" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
              <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
-           <a href="Home.jsp" class="butt">Home</a>
+           <a href="home.jsp" class="butt">Home</a>
            <a href="url" class="butt">Project</a>
            <a href="login.jsp" class="butt">Sign up</a>
-           <a href="SignIn.jsp" class="butt">Sign in</a>
+           <a href="Signin.jsp" class="butt">Sign in</a>
          </nav>
    </header>
    <section>
@@ -50,9 +50,8 @@
                 <input type="password" id="Password" name="Password" placeholder=" your password" required><i class='bx bx-lock-alt' ></i>
             </div>
             
-            <div class="remeber-forgot">
-             <p> By clicking the sign up button you are agree to our<br>
-             <a href="#">Terms and Conditions</a> 
+            <div class="email-exist">
+                <p >Email dosn't exists!! create an account</p>
             </div>
             <button type="submit" class="form-submit">Submit</button>
         </form>

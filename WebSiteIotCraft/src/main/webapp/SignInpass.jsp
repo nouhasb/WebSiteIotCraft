@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign in form</title>
 <link rel="icon" type="image/x-icon" href="/logo">
-<link rel="stylesheet" href="Sign.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="signinpass.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -42,8 +40,8 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder=" your password" required><i class='bx bx-lock-alt' ></i>
             </div>
-            <div class="remeber-forgot">
-              <a href="">forgot you password?</a>
+            <div class="pass">
+              <p>password incorrect</p>
             </div>
             <button type="submit" class="form-submit">Sumbit</button>
         </form>
