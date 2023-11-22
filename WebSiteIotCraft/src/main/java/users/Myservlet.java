@@ -48,7 +48,7 @@ public class Myservlet extends HttpServlet {
 		USERDaoImpl member = new USERDaoImpl();
         if (member.emailExists(user.getEmail())) {
             // If the email exists, redirect to the sign-in page
-            response.sendRedirect("/WebSiteIotCraft/SignIn.jsp");
+            response.sendRedirect("/WebSiteIotCraft/SignUpemail.jsp");
         } else {
             // If the email doesn't exist, proceed with user registration
             member.adduser(user);

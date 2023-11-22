@@ -18,7 +18,7 @@
          
         
          <div class="search">
-             <input class="sear" type="text" placeholder="Search">
+             <input class="sear" type="text" name="search" placeholder="Search">
              <a href="#"><button class="btn" type="submit"><i class='bx bx-search'></i></button></a>
          </div>
          <nav class="navbar">
@@ -30,7 +30,7 @@
    </header>
    <section>
 <div class="container">
-        <form method="post" action="login"  class="signin-form">
+        <form method="post" action="log"  class="signin-form">
             <h2>Sign In</h2>
             <div class="form-group">
                 <label for="email">Email:</label>

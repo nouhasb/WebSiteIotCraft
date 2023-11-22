@@ -19,14 +19,14 @@
          
         
          <div class="search">
-             <input class="sear" type="text" placeholder="Search">
+             <input class="sear" type="text" name="search" name="search" placeholder="Search">
              <a href="#"><button class="btn" type="submit"><i class='bx bx-search'></i></button></a>
          </div>
          <nav class="navbar">
-           <a href="home.jsp" class="butt">Home</a>
+           <a href="Home.jsp" class="butt">Home</a>
            <a href="url" class="butt">Project</a>
            <a href="login.jsp" class="butt">Sign up</a>
-           <a href="Signin.jsp" class="butt">Sign in</a>
+           <a href="SignIn.jsp" class="butt">Sign in</a>
          </nav>
    </header>
    <section>
