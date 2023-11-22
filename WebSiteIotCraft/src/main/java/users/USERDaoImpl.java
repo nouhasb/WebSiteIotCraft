@@ -2,12 +2,14 @@ package users;
 
 
 import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import java.util.List;
 
 import org.mindrot.jbcrypt.BCrypt;
+
 
 public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
 
@@ -65,7 +67,8 @@ public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
 	public boolean userExists(String email, String enteredPassword) {
 	    PreparedStatement pst = null;
 	    ResultSet rs = null;
-	    String sql = "SELECT * FROM utilisateur WHERE email = ?";
+	    String sql = "SELECT password FROM utilisateur WHERE email = ?";
+	    
 	    try {
 	        pst = connection.prepareStatement(sql);
 	        pst.setString(1, email);
@@ -83,6 +86,7 @@ public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
 	    return false;
 	}
 
+
 	private void closeResources(PreparedStatement pst, ResultSet rs) {
         try {
             if (rs != null) {
@@ -95,6 +99,39 @@ public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
             e.printStackTrace();
         }
     }
+	
+	
+	public String getUserNameByEmail(String email) {
+	    PreparedStatement pst = null;
+	    ResultSet resultSet = null;
+	    String sql = "SELECT lname,fname FROM utilisateur WHERE email = ?";
+
+	    try {
+	        pst = connection.prepareStatement(sql);
+	        pst.setString(1, email);
+	        resultSet = pst.executeQuery();
+
+	        if (resultSet.next()) {
+	            return resultSet.getString("lname") +" "+ resultSet.getString("fname");
+	        }
+	    } catch (SQLException exp) {
+	        System.out.println(exp.getMessage());
+	    } finally {
+	        try {
+	            if (resultSet != null) {
+	                resultSet.close();
+	            }
+	            if (pst != null) {
+	                pst.close();
+	            }
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
+
+	    return null; // Return null if no user with the given email is found
+	}
+
 	
 
 
@@ -118,4 +155,7 @@ public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
 		return null;
 	}
 
-}
+		
+	}
+
+

@@ -2,7 +2,7 @@ package users;
 
 import java.io.IOException;
 
-import org.mindrot.jbcrypt.BCrypt;
+
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -39,21 +39,33 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String Email=request.getParameter("email");
-		String Password=request.getParameter("Password");
+		String Password=request.getParameter("password");
 		
-		String hashedPassword = BCrypt.hashpw(Password, BCrypt.gensalt());
+		
 
-		USER user = new USER(Email, hashedPassword);
+		USER user = new USER(Email, Password);
 		USERDaoImpl member = new USERDaoImpl();
 
 		
-		 if (member.userExists(user.getEmail(),user.getPassword())) {
-	            // User exists, redirect to home
-	            response.sendRedirect("/WebSiteIotCraft/Home.jsp"); 
-	        } else {
-	            // User does not exist, redirect to sign up form
-	            response.sendRedirect("/WebSiteIotCraft/SignUp.jsp");
-	        }
+		
+         if (member.emailExists(user.getEmail())) {
+             // Email exists, check password
+             if (member.userExists(user.getEmail(),user.getPassword())==true) {
+                 // Password is correct, redirect to home
+            	 String userName = member.getUserNameByEmail(user.getEmail());
+            	 request.getSession().setAttribute("username", userName);
+                 response.sendRedirect("/WebSiteIotCraft/Userhome.jsp");
+             } else {
+                 // Password is incorrect
+                 
+                 response.sendRedirect("/WebSiteIotCraft/SignInpass.jsp");
+             }
+         } else {
+             // Email does not exist, redirect to sign up
+           
+             response.sendRedirect("/WebSiteIotCraft/SignUpnotemail.jsp");
+         }
 	}
 
 }
+	
