@@ -1,0 +1,200 @@
+
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family:"Poppins",sans-serif;
+}
+
+.header {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	display:flex;
+	align-items:center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin-top: 0px; 
+    background-color:white;
+	z-index:100;
+	min-height:13vh;
+}
+.icon{
+	display:flex;
+	margin-bottom:5px;
+}
+
+.logo{
+	height:40px;
+	margin-right:5px;
+	float:left;
+	margin-top:15px;
+}
+.title{
+	font-size:2.4rem;
+	color:rgb(35, 60, 145);
+	text-decoration:none;
+	font-weight:700;
+	margin-top:15px;	
+}
+.navbar {
+    display: flex;
+    gap: 10px; 
+}
+
+
+.butt{
+	font-size:1.15rem;
+	color:rgb(35, 60, 145);
+	text-decoration:none;
+	padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(35, 60, 145);
+    font-weight: bold;
+    background-color: #F5F5F5;
+    border-radius: 20px; /* Bordure arrondie pour l'effet ovale */
+    transition: background-color 0.3s;
+}
+.navbar a:hover {
+    background-color: #b7bbca ;  
+}
+body{
+	
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('backgroundd.png') no-repeat top center fixed;
+    background-size: cover;
+	
+}
+
+.search{
+  
+    width: 360px;
+    float:left;
+    margin-left:250px;
+    display:left;    
+    position: absolute;
+    left: 250px;
+    justify-content: space-between;   
+    background: rgba(255, 255, 255, 0.5); /* Fond blanc avec une légère transparence */
+    border: 1px solid #ccc; /* Bordure pour la boîte de recherche */
+    border-radius: 10px; /* Bordures arrondies */
+    height:40px;
+
+    
+   
+}
+
+.search input[type="text"] {
+    background:none;
+    outline: none;
+    font-size: 20px;
+    border:none;
+    margin-left:3px;
+    margin-right: 90px; /* Espacement entre l'input et le bouton */
+    width: 40%; 
+    align-items:center;
+    height:37px;
+    
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;  
+    margin-left:60px; 
+}
+ .search i {
+    font-size: 15px; /* Ajustez la taille de l'icône */
+    color: balck; 
+    font-weight:bold;
+    align-items:center;
+}
+
+.container {
+    display: flex;
+    margin-top:120px;
+    
+}
+
+
+
+.card-header {
+	margin-top: 100px;
+	margin-left:0px;
+}
+.container .card {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée légère pour le relief */
+    border-radius: 3px; /* Coins arrondis pour le conteneur */
+    overflow: hidden; /* Cache les débordements pour maintenir les coins arrondis */
+    transition: transform 0.3s ease; /* Animation légère lorsque la carte est survolée */
+    
+}
+.container{
+	flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around; /* Espacement autour des cartes */
+     /* Permet aux cartes de passer à la ligne suivante si l'écran est trop petit */
+    gap: 100px; /* Espacement entre les cartes */
+    margin-top:150px;
+    margin-left:50px;
+    margin-right:60px;
+    margin-bottom:50px;
+}
+.dropbtn {
+    background-color: #F5F5F5; /* Changez la couleur de fond selon votre design */
+    color:rgb(35, 60, 145);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left :20px;
+    margin-top:0px;
+
+}
+
+/* Conteneur du menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Contenu du menu déroulant (caché par défaut) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(235, 235, 241);
+    margin-left :-100px;
+    min-width: 190px;
+    box-shadow: 0px 9px 16px 0px rgba(32, 29, 29, 0.2);
+    z-index: 1;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Liens à l'intérieur du menu déroulant */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+/* Changement de couleur lors du survol des éléments du menu */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Montrer le menu déroulant au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Montrer les icônes de flèche vers le bas et utilisateur quand on survole le bouton du menu */
+.dropdown:hover .dropbtn {
+    background-color: #b7bbca;
+}

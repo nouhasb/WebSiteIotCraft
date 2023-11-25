@@ -1,0 +1,308 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family:"Poppins",sans-serif;
+}
+
+.header {
+	position:fixed;
+	top:0;
+	left:0; 
+	width:100%;
+	backdrop-filter:blur(50px);
+	display:flex;
+	align-items:center;
+	z-index:100;
+    justify-content: space-between;
+    padding: 20px 20px ;
+    margin-top: 0px; 
+    background-color:white;
+	
+}
+.icon{
+	display:flex;
+
+}
+
+.logo{
+	height:40px;
+	margin-right:5px;
+	float:left;
+}
+.title{
+	font-size:2.4rem;
+	color:rgb(35, 60, 145);
+	text-decoration:none;
+	font-weight:700;	
+}
+.navbar {
+    display: flex;
+    gap: 15px; 
+}
+
+
+.butt{
+	font-size:1.15rem;
+	color:rgb(35, 60, 145);
+	text-decoration:none;
+	padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #F5F5F5;
+    border-radius: 20px; /* Bordure arrondie pour l'effet ovale */
+    transition: background-color 0.3s;
+    margin-left:10px;
+	
+}
+.navbar a:hover {
+    background-color: #b7bbca ;  
+}
+body{
+	width: 100%;
+	background: url('backgroundd.png');
+	background-position: top;
+	background-size: cover;
+	min-height: 100vh;;
+	justify-content:center;
+	align-items:center;
+}
+
+.explaine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #383838;
+    margin-left:130px;
+    margin-top:20px;
+}
+
+.explaine p {
+    font-size: 70px;
+    font-family:Helvetica;
+   
+    
+}
+
+.search{
+    width: 350px;
+    float:left;
+    margin-left:290px;
+    display:left;    
+    position: absolute;
+    left: 250px;
+    justify-content: space-between;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.9); /* Fond blanc avec une légère transparence */
+    border: 1px solid #ccc; /* Bordure pour la boîte de recherche */
+    border-radius: 10px; /* Bordures arrondies */
+    bottom: 25px; /* Distance du bas du conteneur */  
+    height:40px;
+}
+
+.search input[type="text"] {
+    background:none;
+    outline: none;
+    font-size: 20px;
+    border:none;
+    margin-left:5px;
+    margin-right: 8px; 
+    width: 60%; 
+    align-items:center;
+    margin-top:-10px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;  
+    margin-left:60px; 
+}
+ .search .search-icon {
+    font-size: 30px; 
+    color: white; 
+}
+.dropbtn {
+    background-color: #F5F5F5; 
+    color:rgb(35, 60, 145);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left :20px;
+    margin-top:0px;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(235, 235, 241);
+    margin-left :-100px;
+    min-width: 190px;
+    box-shadow: 0px 9px 16px 0px rgba(32, 29, 29, 0.2);
+    z-index: 1;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown:hover .dropbtn {
+    background-color: #b7bbca;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: none;
+}
+
+.signin-form {
+    width: 400px;
+    background: #ffffff; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.signin-form h2 {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #222;
+    font-size: 25px;
+    text-align: center;
+    font-style: italic;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; 
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 13.4px; 
+}
+
+input,textarea
+ {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+}
+
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 10px;
+     
+    border-radius: 10px;
+    margin-bottom: 5px; 
+    align-items:center;
+    
+    
+}
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.form-submit {
+    display: inline-block;
+    background: #4a4a4a; 
+    color: #fff; 
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 13.4px;
+    margin-bottom: 10px;
+}
+
+.form-submit:hover {
+    background: #6a6a6a; 
+}
+
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { 
+    color: rgb(12, 6, 34);
+}
+.file-upload-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 120px; /* Adds space between elements */
+}
+
+.file-upload-wrapper input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#uploadBtn {
+    padding: 10px 10px;
+    border-radius: 30px; /* More rounded corners for a circular look */
+    cursor: pointer;
+    background: rgba(233, 233, 233,0.5);
+    color: rgb(0, 0, 0);
+    border: none; /* Remove border */
+    font-size: 1em;
+    
+    
+}
+
+#fileChosen {
+    flex-grow: 1;
+    padding: 10px;
+    background: rgb(255, 255, 255); /* Light grey background */
+    border-radius: 20px; /* Rounded corners */
+    margin-left: 10px; /* Space between button and text */
+    /* Add more styling if needed */
+}

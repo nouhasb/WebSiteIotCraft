@@ -8,6 +8,8 @@
 <link rel="icon" type="image/x-icon" href="/logo">
 <link rel="stylesheet" href="Sign.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
    <header class="header">
@@ -17,15 +19,15 @@
          </div>
          
         
-         <div class="search">
+         <form action="SearchSer" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
-             <a href="#"><button class="btn" type="submit"><i class='bx bx-search'></i></button></a>
-         </div>
+             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+         </form>
          <nav class="navbar">
-           <a href="home.jsp" class="butt">Home</a>
-           <a href="url" class="butt">Project</a>
-           <a href="Signup.jsp" class="butt">Sign up</a>
-           <a href="registration.jsp" class="butt">Sign in</a>
+           <a href="Home.jsp" class="butt">Home</a>
+           <a href="Project.jsp" class="butt">Project</a>
+           <a href="SignUp.jsp" class="butt">Sign up</a>
+           <a href="SignIn.jsp" class="butt">Sign in</a>
          </nav>
    </header>
    <section>

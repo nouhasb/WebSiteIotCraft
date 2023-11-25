@@ -54,7 +54,14 @@ public class LoginServlet extends HttpServlet {
                  // Password is correct, redirect to home
             	 String userName = member.getUserNameByEmail(user.getEmail());
             	 request.getSession().setAttribute("username", userName);
-                 response.sendRedirect("/WebSiteIotCraft/Userhome.jsp");
+            	 request.getSession().setAttribute("loggedIn", true);
+            	 String isAdmin = member.isAdmin(user.getEmail());
+            	 if(isAdmin.equals("true")) {
+                 response.sendRedirect("AdminCrud.jsp");}
+            	 else {
+            		 response.sendRedirect("/WebSiteIotCraft/Userhome.jsp");
+            	 }
+                 
              } else {
                  // Password is incorrect
                  
@@ -66,6 +73,6 @@ public class LoginServlet extends HttpServlet {
              response.sendRedirect("/WebSiteIotCraft/SignUpnotemail.jsp");
          }
 	}
-
+	
 }
 	

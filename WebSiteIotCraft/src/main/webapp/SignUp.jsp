@@ -18,14 +18,14 @@
          </div>
          
         
-         <div class="search">
-             <input class="sear" type="text" name="search" name="search" placeholder="Search">
-             <a href="#"><button class="btn" type="submit"><i class='bx bx-search'></i></button></a>
-         </div>
+        <form action="SearchSer" method="get" class="search">
+             <input class="sear" type="text" name="search" placeholder="Search">
+             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+         </form>
          <nav class="navbar">
            <a href="Home.jsp" class="butt">Home</a>
-           <a href="url" class="butt">Project</a>
-           <a href="login.jsp" class="butt">Sign up</a>
+           <a href="Project.jsp" class="butt">Project</a>
+           <a href="SignUp.jsp" class="butt">Sign up</a>
            <a href="SignIn.jsp" class="butt">Sign in</a>
          </nav>
    </header>

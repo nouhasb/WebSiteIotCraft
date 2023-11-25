@@ -1,7 +1,10 @@
 package users;
 
 
+
+
 import java.sql.PreparedStatement;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -131,6 +134,63 @@ public class USERDaoImpl extends AbstractDAOAuser implements USERIdao {
 
 	    return null; // Return null if no user with the given email is found
 	}
+	
+	
+	
+	public String getUserByEmail(String email) {
+	    PreparedStatement pst = null;
+	    ResultSet resultSet = null;
+	    String sql = "SELECT lname,fname FROM utilisateur WHERE email = ?";
+
+	    try {
+	        pst = connection.prepareStatement(sql);
+	        pst.setString(1, email);
+	        resultSet = pst.executeQuery();
+
+	        if (resultSet.next()) {
+	            return resultSet.getString("lname") +" "+ resultSet.getString("fname");
+	        }
+	    } catch (SQLException exp) {
+	        System.out.println(exp.getMessage());
+	    } finally {
+	        try {
+	            if (resultSet != null) {
+	                resultSet.close();
+	            }
+	            if (pst != null) {
+	                pst.close();
+	            }
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
+
+	    return null; // Return null if no user with the given email is found
+	}
+	
+	
+	public String isAdmin(String email) {
+	    PreparedStatement pst = null;
+	    ResultSet rs = null;
+	    String sql = "SELECT isAdmin FROM utilisateur WHERE email = ?";
+	    try {
+	        pst = connection.prepareStatement(sql);
+	        pst.setString(1, email);
+	        rs = pst.executeQuery();
+
+	        if (rs.next()) {
+	           
+	            return rs.getString("isAdmin");
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        
+	    }
+
+	    return null;
+	}
+
 
 	
 
