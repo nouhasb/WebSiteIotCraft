@@ -22,10 +22,10 @@
              <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
-           <a href="url" class="butt">Home</a>
-           <a href="url" class="butt">Project</a>
-           <a href="Signup.jsp" class="butt">Sign up</a>
-           <a href="Signin.jsp" class="butt">Sign in</a>
+           <a href="Home.jsp" class="butt">Home</a>
+           <a href="Project.jsp" class="butt">Project</a>
+           <a href="SignUp.jsp" class="butt">Sign up</a>
+           <a href="SignIn.jsp" class="butt">Sign in</a>
          </nav>
    </header>
 <section>

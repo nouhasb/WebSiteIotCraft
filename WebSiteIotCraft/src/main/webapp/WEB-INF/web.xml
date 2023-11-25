@@ -1,57 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
   <display-name>WebSiteIotCraft</display-name>
   <welcome-file-list>
     <welcome-file>SignUp.jsp</welcome-file>
   </welcome-file-list>
-  
- <servlet>
+  <servlet>
     <servlet-name>Myservlet</servlet-name>
     <servlet-class>users.Myservlet</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Myservlet</servlet-name>
     <url-pattern>/Myservlet</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>users.LoginServlet</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/log</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>users.Logout</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ProjectServlet</servlet-name>
     <servlet-class>projects.ProjectServlet</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>ProjectServlet</servlet-name>
     <url-pattern>/ProjectSer</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>detailsServlette</servlet-name>
     <servlet-class>projects.detailsServlette</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>detailsServlette</servlet-name>
     <url-pattern>/detailsserv</url-pattern>
-</servlet-mapping>
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>SearchServlet</servlet-name>
     <servlet-class>projects.SearchServlet</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/SearchSer</url-pattern>
-</servlet-mapping>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Addprsevlet</servlet-name>
+    <servlet-class>pendingProjects.Addprsevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Addprsevlet</servlet-name>
+    <url-pattern>/Adding</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getpenproject</display-name>
+    <servlet-name>getpenproject</servlet-name>
+    <servlet-class>pendingProjects.servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getpenproject</servlet-name>
+    <url-pattern>/servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CrudServlet</display-name>
+    <servlet-name>CrudServlet</servlet-name>
+    <servlet-class>projects.CrudServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrudServlet</servlet-name>
+    <url-pattern>/CrudServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteServlet</display-name>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>pendingProjects.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/DeleteServ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveProject</display-name>
+    <servlet-name>ApproveProject</servlet-name>
+    <servlet-class>pendingProjects.ApproveProject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveProject</servlet-name>
+    <url-pattern>/Approve</url-pattern>
+  </servlet-mapping>
 </web-app>

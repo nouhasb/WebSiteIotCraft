@@ -24,8 +24,8 @@
          </form>
          <nav class="navbar">
            <a href="Home.jsp" class="butt">Home</a>
-           <a href="url" class="butt">Project</a>
-           <a href="login.jsp" class="butt">Sign up</a>
+           <a href="Project.jsp" class="butt">Project</a>
+           <a href="SignUp.jsp" class="butt">Sign up</a>
            <a href="SignIn.jsp" class="butt">Sign in</a>
          </nav>
    </header>

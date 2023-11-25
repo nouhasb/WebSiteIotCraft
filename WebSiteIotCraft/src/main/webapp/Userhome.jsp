@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="users.USERDaoImpl" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
+
    <header class="header">
          <div class="icon">
           <img src="logo.png" alt="logo" class="logo">
@@ -22,17 +25,17 @@
              <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
-           <a href="url" class="butt">Home</a>
-           <a href="url" class="butt">Project</a>
+           <a href="Home.jsp" class="butt">Home</a>
+           <a href="UserProject.jsp" class="butt">Project</a>
      
            <div class="dropdown">
             <button class="dropbtn">
-                <i class="fa fa-user"></i> <!-- Icône d'utilisateur -->
-                <i class="fa fa-chevron-down"></i> <!-- Icône de flèche vers le bas -->
+                <i class="fa fa-user"></i> 
+                <i class="fa fa-chevron-down"></i> 
             </button>
             <div class="dropdown-content">
                 <a href="#">${sessionScope.username}</a>
-                <a href="#">My profile</a>
+                <a href="userProfileadd.jsp">Add a project</a>
                 <a href="#">Settings</a>
                 <a href="logout">Log out</a>
             </div>
@@ -68,7 +71,7 @@
      
   </div>
  </section>
-   
+
    
 </body>
 </html>

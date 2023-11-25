@@ -16,6 +16,16 @@ public class Project {
 	
 	
 
+	public Project(String title, String steps, String components, String image) {
+		super();
+		this.title = title;
+		this.steps = steps;
+		Components = components;
+		this.image = image;
+	}
+
+
+
 	public Project(long ID, String title, String steps, String components, String image) {
 		super();
 		this.ID = ID;
