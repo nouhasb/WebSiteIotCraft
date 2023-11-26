@@ -1,18 +1,24 @@
 package projects;
 
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.List;
+
 import jakarta.servlet.RequestDispatcher;
+
 import jakarta.servlet.ServletException;
-
-
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+import jakarta.servlet.http.Part;
 
 
+
+@MultipartConfig
 public class CrudServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	 private static final String IMAGE_DIR = "C:/Users/pc/git/repository6/WebSiteIotCraft/src/main/webapp/projetimage/";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -57,20 +63,30 @@ public class CrudServlet extends HttpServlet {
 	    }
 
 	    private void addProject(HttpServletRequest request, HttpServletResponse response) 
-	            throws IOException {
+	            throws IOException,ServletException {
 	    	    String title = request.getParameter("title");
 	    	    String steps = request.getParameter("steps");
 	    	    String components = request.getParameter("components");
-	    	    String image = request.getParameter("image");
-	    	    System.out.println("Received Data: Title=" + title + ", Steps=" + steps + ", Components=" + components + ", Image=" + image);
+	    	   
+	    	    Part filePart = request.getPart("image");
+	            String fileName =Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+	    
+	           
+	            try {
+	                      
+	                  	String storagePath = IMAGE_DIR + fileName;
 
-	    	    Project project = new Project(title,steps,components,image);
+	                      filePart.write(storagePath);	                     	            
+	            
+	                      } catch (IOException e) {
+	                      	  e.printStackTrace(); 
+	                      }
+	    	    System.out.println("Received Data: Title=" + title + ", Steps=" + steps + ", Components=" + components + ", Image=" + fileName);
+
+	    	    Project project = new Project(title,steps,components,fileName);
 	    	    ProjectDaoImpl projectDao=new ProjectDaoImpl();
 	    	    projectDao.addProject(project);
-	    	   
-	    	   
-	    	    
-
+	    	 	    	    
 	    	    response.sendRedirect("AdminCrud.jsp");
 	    	    
 	    }

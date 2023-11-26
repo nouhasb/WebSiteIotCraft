@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="icon" type="image/x-icon" href="/logo">
-<link rel="stylesheet" href="userhome.css">
+<link rel="stylesheet" href="userpage.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
@@ -40,27 +40,37 @@
                 <a href="logout">Log out</a>
             </div>
         </div> 
-     <script>
-    function toggleDropdown() {
+    <script>
         var dropdownContent = document.getElementById("userDropdown");
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        } else {
+        var timer; // Déclarer une variable de minuterie
+
+        // Fonction pour afficher le menu déroulant
+        function showDropdown() {
             dropdownContent.style.display = "block";
         }
-    }
-    // Fermer le menu déroulant si l'utilisateur clique en dehors de celui-ci
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.style.display === "block") {
-                    openDropdown.style.display = "none";
-                }
-            }
+
+        // Fonction pour masquer le menu déroulant
+        function hideDropdown() {
+            dropdownContent.style.display = "none";
         }
-    }
+
+        // Ajouter un gestionnaire d'événements au bouton du menu déroulant
+        document.querySelector(".dropbtn").addEventListener("click", function() {
+            clearTimeout(timer); // Effacer la minuterie précédente (si elle existe)
+            showDropdown();
+        });
+
+        // Fermer le menu déroulant si l'utilisateur clique en dehors de celui-ci
+        window.addEventListener("click", function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                hideDropdown();
+            }
+        });
+
+        // Ajouter un délai pour masquer le menu déroulant après 5 secondes (par exemple)
+        dropdownContent.addEventListener("mouseleave", function() {
+            timer = setTimeout(hideDropdown, 10000); // Masquer après 5 secondes (5000 millisecondes)
+        });
     </script>
          </nav>
    </header>
@@ -71,7 +81,17 @@
      
   </div>
  </section>
-
+ <script>
+        // Ajoutez un gestionnaire d'événements au bouton du menu déroulant
+        document.querySelector(".dropbtn").addEventListener("click", function() {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    </script>
    
 </body>
 </html>

@@ -1,5 +1,6 @@
 package pendingProjects;
 import java.io.IOException;
+
 import java.nio.file.Paths;
 
 
@@ -17,7 +18,7 @@ import jakarta.servlet.http.Part;
 public class Addprsevlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private static final String IMAGE_DIR = "C:/Users/pc/git/repository6/WebSiteIotCraft/src/main/webapp/uploads/";
+    private static final String IMAGE_DIR = "C:/Users/pc/git/repository6/WebSiteIotCraft/src/main/webapp/projetimage/";
 
 
     public Addprsevlet() {

@@ -28,7 +28,6 @@
              <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
-           <a href="Userhome.jsp" class="butt">Home</a>
            <a href="UserProject.jsp" class="butt">Project</a>
            <a href="AdminCrud.jsp" class="butt">PlanHub</a>
      
