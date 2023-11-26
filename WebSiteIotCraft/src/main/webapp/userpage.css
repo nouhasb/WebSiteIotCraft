@@ -9,37 +9,38 @@
 .header {
 	position:fixed;
 	top:0;
-	left:0; 
+	left:0;
 	width:100%;
-	backdrop-filter:blur(50px);
 	display:flex;
 	align-items:center;
-	z-index:100;
     justify-content: space-between;
-    padding: 20px 20px ;
+    padding: 5px 20px;
     margin-top: 0px; 
     background-color:white;
-	
+	z-index:100;
+	height:13vh;
 }
 .icon{
 	display:flex;
-
+	margin-bottom:5px;
 }
 
 .logo{
 	height:40px;
 	margin-right:5px;
 	float:left;
+	margin-top:15px;
 }
 .title{
 	font-size:2.4rem;
 	color:rgb(35, 60, 145);
 	text-decoration:none;
-	font-weight:700;	
+	font-weight:700;
+	margin-top:15px;	
 }
 .navbar {
     display: flex;
-    gap: 15px; 
+    gap: 10px; 
 }
 
 
@@ -49,57 +50,41 @@
 	text-decoration:none;
 	padding: 10px 20px;
     text-decoration: none;
+    color: rgb(35, 60, 145);
     font-weight: bold;
     background-color: #F5F5F5;
     border-radius: 20px; /* Bordure arrondie pour l'effet ovale */
     transition: background-color 0.3s;
-    margin-left:10px;
-	
 }
 .navbar a:hover {
     background-color: #b7bbca ;  
 }
 body{
-	width: 100%;
-	background: url('backgroundd.png');
-	background-position: top;
-	background-size: cover;
-	min-height: 100vh;;
-	justify-content:center;
-	align-items:center;
-}
-
-.explaine {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #383838;
-    margin-left:130px;
-    margin-top:20px;
-}
-
-.explaine p {
-    font-size: 70px;
-    font-family:Helvetica;
-   
-    
+	
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('backgroundd.png') no-repeat top center fixed;
+    background-size: cover;
+	
 }
 
 .search{
-    width: 350px;
+  
+    width: 360px;
     float:left;
-    margin-left:290px;
+    margin-left:250px;
     display:left;    
     position: absolute;
     left: 250px;
-    justify-content: space-between;
-    padding: 6px;
-    background: rgba(255, 255, 255, 0.9); /* Fond blanc avec une légère transparence */
+    justify-content: space-between;   
+    background: rgba(255, 255, 255, 0.5); /* Fond blanc avec une légère transparence */
     border: 1px solid #ccc; /* Bordure pour la boîte de recherche */
     border-radius: 10px; /* Bordures arrondies */
-    bottom: 25px; /* Distance du bas du conteneur */  
+    height:40px;
+
+    
+   
 }
 
 .search input[type="text"] {
@@ -107,23 +92,59 @@ body{
     outline: none;
     font-size: 20px;
     border:none;
-    margin-left:5px;
-    margin-right: 8px; /* Espacement entre l'input et le bouton */
-    width: 60%; 
+    margin-left:3px;
+    margin-right: 90px; /* Espacement entre l'input et le bouton */
+    width: 40%; 
     align-items:center;
+    height:37px;
+    
 }
 
 .search button {
     background: none;
     border: none;
-    padding: 5px;
     cursor: pointer;  
     margin-left:60px; 
 }
- .search .search-icon {
-    font-size: 30px; /* Ajustez la taille de l'icône */
-    color: white; 
+ .search i {
+    font-size: 15px; /* Ajustez la taille de l'icône */
+    color: balck; 
+    font-weight:bold;
+    align-items:center;
 }
+
+.container {
+    display: flex;
+    margin-top:120px;
+    
+}
+
+
+
+.card-header {
+	margin-top: 100px;
+	margin-left:0px;
+}
+.container .card {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée légère pour le relief */
+    border-radius: 3px; /* Coins arrondis pour le conteneur */
+    overflow: hidden; /* Cache les débordements pour maintenir les coins arrondis */
+    transition: transform 0.3s ease; /* Animation légère lorsque la carte est survolée */
+    
+}
+.container{
+	flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around; /* Espacement autour des cartes */
+     /* Permet aux cartes de passer à la ligne suivante si l'écran est trop petit */
+    gap: 100px; /* Espacement entre les cartes */
+    margin-top:150px;
+    margin-left:50px;
+    margin-right:60px;
+    margin-bottom:50px;
+}
+
 .dropbtn {
     background-color: #F5F5F5; /* Changez la couleur de fond selon votre design */
     color:rgb(35, 60, 145);
@@ -176,4 +197,22 @@ body{
 /* Montrer les icônes de flèche vers le bas et utilisateur quand on survole le bouton du menu */
 .dropdown:hover .dropbtn {
     background-color: #b7bbca;
+}
+
+.explaine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #383838;
+    margin-left:130px;
+    margin-top:20px;
+}
+
+.explaine p {
+    font-size: 70px;
+    font-family:Helvetica;
+   
+    
 }

@@ -56,6 +56,7 @@ public class LoginServlet extends HttpServlet {
             	 request.getSession().setAttribute("username", userName);
             	 request.getSession().setAttribute("loggedIn", true);
             	 String isAdmin = member.isAdmin(user.getEmail());
+            	 request.getSession().setAttribute("isAdmin", isAdmin);
             	 if(isAdmin.equals("true")) {
                  response.sendRedirect("AdminCrud.jsp");}
             	 else {

@@ -26,7 +26,7 @@
 				</button></a>
 		</form>
 		<nav class="navbar">
-			<a href="Userhome.jsp" class="butt">Home</a> 
+			<a href="admin.jsp" class="butt">UserHub</a> 
 			<a href="UserProject.jsp" class="butt">Project</a>
 
 		</nav>
@@ -34,7 +34,7 @@
 	</header>
 	<section class="sec">
 		<div class="container">
-			<form action="CrudServlet" method="post"  class="signin-form">
+			<form action="CrudServlet" method="post" enctype="multipart/form-data" class="signin-form">
 				<h2>Add a project</h2>
 				<input type="hidden" name="action" value="add">
 				<div class="form-group">
@@ -51,12 +51,15 @@
 					<textarea id="Components" name="components" placeholder="Components"></textarea>
 					<br>
 				</div>
-				<div class="form-group">
-					<label for="image">Project Components:</label>
-					<textarea id="projectComponents" name="image" placeholder="image"></textarea>
-					<br>
-				</div>
 				
+			    <div class="form-group">
+                      <label for="image">Project Image:</label>
+                       <div class="file-upload-wrapper">
+                       <label for="image" id="uploadBtn" class="btn">Choose File</label>
+                       <span id="fileChosen">No file chosen</span>
+                       <input type="file" id="image" name="image" accept="image/*">
+               </div> 
+               </div> 
 
 
 				<button type="submit" class="form-submit">Submit</button>
@@ -65,6 +68,12 @@
 		</div>
 	</section>
 
+<script>
+document.getElementById('image').onchange = function() {
+    var fileName = this.value.split('\\').pop();
+    document.getElementById('fileChosen').textContent = fileName || 'No file chosen';
+};
 
+</script>
 </body>
 </html>
