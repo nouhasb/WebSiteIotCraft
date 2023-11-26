@@ -19,7 +19,7 @@ Réalisé par : <br>
 # Table of Contents
 1. [Introduction Générale](#introduction-générale)
 2. [Description du Projet](#description-du-projet)
-   1. [Petite Description](#petite-description)
+   1. [Description](#description)
    2. [Fonctionnalités Utilisateur](#fonctionnalités-utilisateur)
    3. [Fonctionnalités Administrateur](#fonctionnalités-administrateur)
 3. [Outils Utilisés](#outils-utilisés)
@@ -47,6 +47,10 @@ Réalisé par : <br>
       2. [Ajout de Projets par l'Utilisateur](#ajout-de-projets-par-lutilisateur)
       3. [Ajout, Modification et Suppression de Projets par l'Administrateur](#ajout-modification-et-suppression-de-projets-par-ladministrateur)
       4. [Page d'Accueil Personnalisée](#page-daccueil-personnalisée)
+   3. [Gestion des Recherches](#gestion-des-recherches)
+      1. [Fonctionnement](#fonctionnement)
+      2. [Résultats](#résultats)
+      3. [Cohérence de l'Expérience Utilisateur](#cohérence-de-lexpérience-utilisateur)
 6. [Conclusion](#conclusion)
 
 # Introduction Générale
@@ -169,16 +173,16 @@ Nous utilisons une table utilisateur avec des champs tels que `id`, `firstname`,
 
 ### Inscription d'un Utilisateur (Sign Up)
 
-Lorsqu'un utilisateur s'inscrit, les données sont collectées via la servlet 'SignUpServlet'. Nous utilisons la bibliothèque JBCrypt pour sécuriser le mot de passe en le hachant. Si l'email existe déjà dans la base de données, ce qui est vérifié avec la méthode 'emailExists', l'utilisateur est redirigé vers la page d'inscription avec un message explicatif.
+Lorsqu'un utilisateur s'inscrit, les données sont collectées via la servlet `SignUpServlet`. Nous utilisons la bibliothèque JBCrypt pour sécuriser le mot de passe en le hachant. Si l'email existe déjà dans la base de données, ce qui est vérifié avec la méthode 'emailExists', l'utilisateur est redirigé vers la page d'inscription avec un message explicatif.
 
 ### Connexion d'un Utilisateur (Sign In)
 
 La connexion d'un utilisateur est gérée par la servlet `LoginServlet`, qui vérifie les informations fournies par l'utilisateur par rapport à celles enregistrées dans la base de données. Des messages d'erreur appropriés sont renvoyés si nécessaire, sinon l'utilisateur est dirigé vers une page utilisateur personnalisée.
 
 ### Espace Utilisateur
-Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure la possibilité d'ajouter de nouveaux projets. Cette fonctionnalité est implémentée à l'aide de la servlet "AddProjectServlet". Lorsque l'utilisateur souhaite ajouter un nouveau projet, la servlet collecte les informations nécessaires et utilise la classe 'PendingProjectsDAOImpl' pour interagir avec la table 'pendingprojects' dans la base de données.
+Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure la possibilité d'ajouter de nouveaux projets. Cette fonctionnalité est implémentée à l'aide de la servlet `AddProjectServlet`. Lorsque l'utilisateur souhaite ajouter un nouveau projet, la servlet collecte les informations nécessaires et utilise la classe `PendingProjectsDAOImpl` pour interagir avec la table 'pendingprojects' dans la base de données.
 
-La méthode clé utilisée dans 'PendingProjectsDAOImpl' pour ajouter un projet est 'addProject'. Cette méthode prend en compte les détails du projet fournis par l'utilisateur, tels que la description, les composants utilisés, et les instructions détaillées et une image. Elle assure l'ajout de ces informations à la table pendingprojects, où elles sont en attente d'approbation.
+La méthode clé utilisée dans `PendingProjectsDAOImpl` pour ajouter un projet est 'addProject'. Cette méthode prend en compte les détails du projet fournis par l'utilisateur, tels que la description, les composants utilisés, et les instructions détaillées et une image. Elle assure l'ajout de ces informations à la table pendingprojects, où elles sont en attente d'approbation.
 
 Ainsi, le processus d'ajout d'un nouveau projet implique la collecte des données par la servlet, l'utilisation de la classe DAO pour interagir avec la base de données, et le stockage des informations dans la table pendingprojects jusqu'à ce qu'elles soient examinées et approuvées par l'administrateur.
 
@@ -189,11 +193,11 @@ La gestion des projets constitue une autre facette essentielle de notre backend.
 
 ### Gestion de la Table des Projets
 
-Nous avons créé une table des projets qui enregistre des détails tels que id, nom, description, composants, et 'image'. La classe ProjectDAOImpl offre des méthodes pour ajouter, éditer et supprimer des projets.
+Nous avons créé une table des projets qui enregistre des détails tels que `id`, `nom`, `description`, `composants`, et `image`. La classe ProjectDAOImpl offre des méthodes pour ajouter, éditer et supprimer des projets.
 
 ### Gestion des Projets par l'Admin
 
-Une servlet dédiée, CrudServlet, gère le processus d'ajout, de modification et de suppression de projets. Les détails du projet, tels que la description, les composants et une image illustrative, sont récupérés via cette servlet. Ces informations sont ensuite traitées à l'aide de méthodes appropriées dans la classe ProjectDAOImpl.
+Une servlet dédiée, `CrudServlet`, gère le processus d'ajout, de modification et de suppression de projets. Les détails du projet, tels que la description, les composants et une image illustrative, sont récupérés via cette servlet. Ces informations sont ensuite traitées à l'aide de méthodes appropriées dans la classe `ProjectDAOImpl`.
 
 #### Ajout de Projets
 
@@ -212,12 +216,24 @@ La méthode deleteProject permet à l'administrateur de supprimer un projet de l
 Lorsqu'un utilisateur soumet un nouveau projet, il est initialement ajouté à la table pendingprojects. 
 #### Approbation de Projets
 
-L'administrateur peut approuver un projet en utilisant la méthode 'addProject' de la classe 'ProjectsDAOImpl' . Cela transfère le projet de la table pendingprojects à la table principale des projets.
+L'administrateur peut approuver un projet en utilisant la méthode `addProject` de la classe `ProjectsDAOImpl` . Cela transfère le `projet` de la table `pendingprojects` à la table principale des projets.
 
 #### Supression de Projets
-L'administrateur peut supprémé un projet en utilisant la méthode 'deleteUProject' de la classe 'PendingProjectsDAOImpl'. 
+L'administrateur peut supprimer un projet en utilisant la méthode `deleteUProject` de la classe `PendingProjectsDAOImpl`. 
 
+## Gestion des Recherches
+
+Lorsqu'un utilisateur effectue une recherche sur le site IotCraft, la servlet SearchServlet entre en jeu pour traiter cette requête. Cette servlet agit comme un intermédiaire entre l'interface utilisateur et la base de données.
+
+### Fonctionnement 
+La servlet récupère la valeur de recherche entrée par l'utilisateur et utilise une méthode avancée de la classe ProjectDaoImpl. Cette méthode exécute une requête SQL basée sur la clause LIKE, permettant des résultats flexibles même avec des termes de recherche partiels.
+
+### Résultats 
+Si des projets correspondent à la recherche, ils sont affichés à l'utilisateur. En cas d'absence de résultats, l'utilisateur est redirigé vers une page d'erreur.
+
+### Cohérence de l'Expérience Utilisateur 
+Cette gestion des recherches vise à fournir une expérience utilisateur fluide. En présentant des résultats pertinents et en gérant les cas où aucune correspondance n'est trouvée, IotCraft offre une expérience transparente aux utilisateurs, renforçant ainsi son engagement envers la satisfaction des utilisateurs.
 
 
 # Conclusion
-
+En conclusion, IotCraft représente une plateforme innovante qui s'inscrit dans le contexte dynamique de l'Internet des objets (IoT). En répondant aux besoins croissants de la communauté technologique, notre site offre une interface conviviale pour explorer, contribuer et collaborer sur des projets IoT passionnants. La combinaison de fonctionnalités utilisateur, de gestion de projets, et d'une recherche efficace crée un écosystème en ligne stimulant pour les amateurs et les experts en IoT. Nous sommes fiers de contribuer à l'évolution de ce domaine en plein essor et nous nous engageons à améliorer continuellement l'expérience des utilisateurs sur IotCraft. Que l'aventure IoT commence !
