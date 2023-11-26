@@ -14,7 +14,7 @@
 
 Réalisé par : <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Nouhaila Sabri<br><br><br><br>
-<h4 align="center">Année universitaire 2022/2023</h4><br><br>
+<h4 align="center">Année universitaire 2023/2024</h4><br><br>
 
 # Table of Contents
 1. [Introduction Générale](#introduction-générale)
@@ -23,10 +23,13 @@ Réalisé par : <br>
    2. [Fonctionnalités Utilisateur](#fonctionnalités-utilisateur)
    3. [Fonctionnalités Administrateur](#fonctionnalités-administrateur)
 3. [Outils Utilisés](#outils-utilisés)
-4. [Frontend](#frontend)
-5. [Backend](#backend)
-6. [Tests et Validation](#tests-et-validation)
-7. [Conclusion](#conclusion)
+    1. [Java Enterprise Edition (JEE)](#Java Enterprise Edition (JEE))
+    2. [Fonctionnalités Utilisateur](#fonctionnalités-utilisateur)
+    3. [Fonctionnalités Administrateur](#fonctionnalités-administrateur)
+5. [Frontend](#frontend)
+6. [Backend](#backend)
+7. [Tests et Validation](#tests-et-validation)
+8. [Conclusion](#conclusion)
 
 # Introduction Générale
 <p align="justify">
@@ -78,8 +81,22 @@ Réalisé par : <br>
 - L'administrateur peut consulter la page des projets pour avoir une vue d'ensemble de tous les projets disponibles sur la plateforme.
 
 # Outils Utilisés
+#### Java Enterprise Edition (JEE) :
 
+- Description :JEE est une spécification Java dédiée au développement d'applications d'entreprise. Il fournit des API pour les fonctionnalités telles que la gestion des transactions, la persistance des données, et les services web.
+- Rôle dans le Projet : JEE est le cadre principal utilisé pour le développement de l'application web IoTCraft. Il offre une architecture robuste pour gérer les défis spécifiques de l'Internet des Objets.
+#### Eclipse IDE :
 
+- Description : Eclipse est un environnement de développement intégré (IDE) open-source largement utilisé pour le développement Java. Il offre des fonctionnalités avancées telles que l'édition de code, le débogage, et la gestion de projets.
+- Rôle dans le Projet : Eclipse sert d'IDE principal pour le développement de l'application IoTCraft. Il offre une interface conviviale et des outils puissants pour faciliter le processus de développement.
+#### MySQL Database :
+
+- Description : MySQL est un système de gestion de base de données relationnelle open-source. Il est largement utilisé pour la gestion efficace des données dans les applications web.
+- Rôle dans le Projet : MySQL est utilisé comme système de gestion de base de données pour stocker les informations relatives aux utilisateurs, aux projets, et aux interactions sur la plateforme IoTCraft.
+#### Apache Tomcat :
+
+- Description : Apache Tomcat est un serveur web et un conteneur de servlet open-source. Il implémente les spécifications Java Servlet, JavaServer Pages (JSP), et Java Expression Language (EL).
+- Rôle dans le Projet : Tomcat est utilisé comme serveur d'application pour déployer et exécuter l'application web JEE IoTCraft. Il gère les demandes HTTP et assure le bon fonctionnement de l'application.
 # Frontend
 
 
