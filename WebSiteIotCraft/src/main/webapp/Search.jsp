@@ -22,7 +22,7 @@
 <body>
 <%
 Boolean loggedIn = (Boolean) request.getSession().getAttribute("loggedIn");
-if (loggedIn==false) {
+if (loggedIn == null || loggedIn == false) {
     // Display header for users who are not logged in
 %>
 	<header class="header">
@@ -32,9 +32,9 @@ if (loggedIn==false) {
 		</div>
 
 
-		 <form action="SearchSer" method="get" class="search">
+		 <form action="SearchSe" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
-             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+             <a href='/SearchSe'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
 		<nav class="navbar">
 			<a href="home.jsp" class="butt">Home</a> <a href="url" class="butt" >Project</a>
@@ -58,9 +58,9 @@ if(isAdmin.equals("false")) {
          </div>
          
         
-         <form action="SearchSer" method="get" class="search">
+         <form action="SearchSe" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
-             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+             <a href='/SearchSe'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
            <a href="Userhome.jsp" class="butt">Home</a>
@@ -113,9 +113,9 @@ if(isAdmin.equals("false")) {
          </div>
          
         
-         <form action="SearchSer" method="get" class="search">
+         <form action="SearchSe" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
-             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+             <a href='/SearchSe'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
            <a href="AdminCrud.jsp" class="butt">PlanHub</a>

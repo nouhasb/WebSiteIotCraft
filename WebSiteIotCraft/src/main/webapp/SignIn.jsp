@@ -19,9 +19,9 @@
          </div>
          
         
-         <form action="SearchSer" method="get" class="search">
+         <form action="SearchSe" method="get" class="search">
              <input class="sear" type="text" name="search" placeholder="Search">
-             <a href='/SearchSer'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
+             <a href='/SearchSe'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
          <nav class="navbar">
            <a href="Home.jsp" class="butt">Home</a>

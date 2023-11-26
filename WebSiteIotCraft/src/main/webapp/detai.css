@@ -152,3 +152,56 @@ body{
 	margin-left:30px;
 	margin-bottom:40px;
 }
+.dropbtn {
+    background-color: #F5F5F5; /* Changez la couleur de fond selon votre design */
+    color:rgb(35, 60, 145);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left :20px;
+    margin-top:5px;
+
+}
+
+/* Conteneur du menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Contenu du menu déroulant (caché par défaut) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(235, 235, 241);
+    margin-left :-100px;
+    min-width: 190px;
+    box-shadow: 0px 9px 16px 0px rgba(32, 29, 29, 0.2);
+    z-index: 1;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Liens à l'intérieur du menu déroulant */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+   
+}
+
+/* Changement de couleur lors du survol des éléments du menu */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Montrer le menu déroulant au survol */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Montrer les icônes de flèche vers le bas et utilisateur quand on survole le bouton du menu */
+.dropdown:hover .dropbtn {
+    background-color: #b7bbca;
+}

@@ -50,7 +50,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SearchServlet</servlet-name>
-    <url-pattern>/SearchSer</url-pattern>
+    <url-pattern>/SearchSe</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Addprsevlet</servlet-name>
