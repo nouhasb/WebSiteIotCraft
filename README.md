@@ -1,6 +1,6 @@
 <h2 align="center">Projet de Développement Web avec JEE</h2><br><br>
 
-<h3 align="center" >Création d"un site web qui propose des projets IoT</h3><br><br><br>
+<h3 align="center" >Création d'un site web qui propose des projets IoT</h3><br><br><br>
 
  
 <h3 align="center" >IotCraft </h3><br><br><br><br><br><br><br><br><br><br><br>
