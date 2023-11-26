@@ -162,7 +162,7 @@ Dans la partie backend de notre application, la gestion des utilisateurs est cru
 
 ### Établissement de la Connexion avec MySQL
 
-Nous avons mis en place des classes Java dédiées, notamment `DBConnector`, qui permettent d'établir une connexion sécurisée avec notre base de données MySQL. Ces classes gèrent la configuration de la connexion et facilitent les interactions avec la base de données.
+Nous avons mis en place des classes Java dédiées, notamment `SingleCon`, qui permettent d'établir une connexion sécurisée avec notre base de données MySQL. Ces classes gèrent la configuration de la connexion et facilitent les interactions avec la base de données.
 
 ### Gestion de la Table des Utilisateurs
 
