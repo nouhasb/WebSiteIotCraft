@@ -47,8 +47,7 @@ Réalisé par : <br>
       2. [Ajout de Projets par l'Utilisateur](#ajout-de-projets-par-lutilisateur)
       3. [Ajout, Modification et Suppression de Projets par l'Administrateur](#ajout-modification-et-suppression-de-projets-par-ladministrateur)
       4. [Page d'Accueil Personnalisée](#page-daccueil-personnalisée)
-6. [Tests et Validation](#tests-et-validation)
-7. [Conclusion](#conclusion)
+6. [Conclusion](#conclusion)
 
 # Introduction Générale
 <p align="justify">
@@ -166,39 +165,58 @@ Nous avons mis en place des classes Java dédiées, notamment `SingleCon`, qui p
 
 ### Gestion de la Table des Utilisateurs
 
-Nous utilisons une table utilisateur avec des champs tels que `id`, `firstname`, `lastname`, `email`, et un mot de passe haché. La classe `UserDAOImpl` est spécifiquement conçue pour gérer les opérations sur cette table, notamment la méthode `addUser(User user)` pour ajouter un nouvel utilisateur.
+Nous utilisons une table utilisateur avec des champs tels que `id`, `firstname`, `lastname`, `email`, et un mot de passe haché. La classe `USERDaoImpl` est spécifiquement conçue pour gérer les opérations sur cette table, notamment la méthode `adduser(User user)` pour ajouter un nouvel utilisateur.
 
 ### Inscription d'un Utilisateur (Sign Up)
 
-Lorsqu'un utilisateur s'inscrit, les données sont collectées via la servlet `SignUpServlet`. Nous utilisons la bibliothèque JBCrypt pour sécuriser le mot de passe en le hachant. Si l'email existe déjà dans la base de données, l'utilisateur est redirigé vers la page d'inscription avec un message explicatif.
+Lorsqu'un utilisateur s'inscrit, les données sont collectées via la servlet 'SignUpServlet'. Nous utilisons la bibliothèque JBCrypt pour sécuriser le mot de passe en le hachant. Si l'email existe déjà dans la base de données, ce qui est vérifié avec la méthode 'emailExists', l'utilisateur est redirigé vers la page d'inscription avec un message explicatif.
 
 ### Connexion d'un Utilisateur (Sign In)
 
-La connexion d'un utilisateur est gérée par la servlet `SignInServlet`, qui vérifie les informations fournies par l'utilisateur par rapport à celles enregistrées dans la base de données. Des messages d'erreur appropriés sont renvoyés si nécessaire, sinon l'utilisateur est dirigé vers une page utilisateur personnalisée.
+La connexion d'un utilisateur est gérée par la servlet `LoginServlet`, qui vérifie les informations fournies par l'utilisateur par rapport à celles enregistrées dans la base de données. Des messages d'erreur appropriés sont renvoyés si nécessaire, sinon l'utilisateur est dirigé vers une page utilisateur personnalisée.
 
 ### Espace Utilisateur
+Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure la possibilité d'ajouter de nouveaux projets. Cette fonctionnalité est implémentée à l'aide de la servlet "AddProjectServlet". Lorsque l'utilisateur souhaite ajouter un nouveau projet, la servlet collecte les informations nécessaires et utilise la classe 'PendingProjectsDAOImpl' pour interagir avec la table 'pendingprojects' dans la base de données.
 
-Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure :
-- La possibilité d'ajouter de nouveaux projets.
-- Des informations sur le profil de l'utilisateur.
+La méthode clé utilisée dans 'PendingProjectsDAOImpl' pour ajouter un projet est 'addProject'. Cette méthode prend en compte les détails du projet fournis par l'utilisateur, tels que la description, les composants utilisés, et les instructions détaillées et une image. Elle assure l'ajout de ces informations à la table pendingprojects, où elles sont en attente d'approbation.
+
+Ainsi, le processus d'ajout d'un nouveau projet implique la collecte des données par la servlet, l'utilisation de la classe DAO pour interagir avec la base de données, et le stockage des informations dans la table pendingprojects jusqu'à ce qu'elles soient examinées et approuvées par l'administrateur.
+
 
 ## Gestion des Projets
 
-La gestion des projets constitue une autre facette essentielle de notre backend. Elle permet aux utilisateurs d'ajouter, d'éditer, et de consulter des projets sur la plateforme IoT. Voici une vue détaillée de cette fonctionnalité :
+La gestion des projets constitue une autre facette essentielle de notre backend. Elle permet aux administrateurs d'ajouter, de modifier et de supprimer des projets sur la plateforme IoT. Voici une vue détaillée de cette fonctionnalité :
 
 ### Gestion de la Table des Projets
 
-Nous avons créé une table des projets qui enregistre des détails tels que `id`, `nom`, `description`, `composants`, et d'autres informations pertinentes. La classe `ProjectDAOImpl` offre des méthodes pour ajouter, éditer, et supprimer des projets.
+Nous avons créé une table des projets qui enregistre des détails tels que id, nom, description, composants, et 'image'. La classe ProjectDAOImpl offre des méthodes pour ajouter, éditer et supprimer des projets.
 
-### Ajout de Projets par l'Utilisateur
+### Gestion des Projets par l'Admin
 
-Une servlet dédiée, `AddProjectServlet`, gère le processus d'ajout de nouveaux projets. Les détails du projet, tels que la description, les composants, et une image illustrative, sont récupérés via cette servlet. Ces informations sont ensuite ajoutées à la table des projets dans la base de données.
+Une servlet dédiée, CrudServlet, gère le processus d'ajout, de modification et de suppression de projets. Les détails du projet, tels que la description, les composants et une image illustrative, sont récupérés via cette servlet. Ces informations sont ensuite traitées à l'aide de méthodes appropriées dans la classe ProjectDAOImpl.
 
-### Page d'Accueil Personnalisée
+#### Ajout de Projets
 
-Une fois connecté, l'utilisateur est dirigé vers une page d'accueil personnalisée où son nom est affiché. À partir de cette page, l'utilisateur peut ajouter de nouveaux projets ou consulter les projets existants sur la plateforme IoT.
+La méthode addProject permet d'ajouter un nouveau projet à la table des projets.
 
-# Tests et Validation
+#### Modification de Projets
+
+La méthode updateProject permet à l'administrateur de faire des modifications sur un projet déjà existant.
+
+#### Suppression de Projets
+
+La méthode deleteProject permet à l'administrateur de supprimer un projet de la plateforme IoT.
+
+### Gestion des Projets Soumis par les Utilisateurs
+
+Lorsqu'un utilisateur soumet un nouveau projet, il est initialement ajouté à la table pendingprojects. 
+#### Approbation de Projets
+
+L'administrateur peut approuver un projet en utilisant la méthode 'addProject' de la classe 'ProjectsDAOImpl' . Cela transfère le projet de la table pendingprojects à la table principale des projets.
+
+#### Supression de Projets
+L'administrateur peut supprémé un projet en utilisant la méthode 'deleteUProject' de la classe 'PendingProjectsDAOImpl'. 
+
 
 
 # Conclusion
