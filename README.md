@@ -3,7 +3,7 @@
 <h3 align="center" >Création d"un site web qui propose des projets IoT</h3><br><br><br>
 
  
-<h3 align="center" >IotCraft </h3><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h3 align="center" >IotCraft </h3><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
@@ -13,7 +13,7 @@
 
 
 <h4>Réalisé par :</h4> 
-&nbsp;&nbsp;&nbsp;&nbsp;Nouhaila Sabri<br><br><br><br><br><br><br><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nouhaila Sabri<br><br><br><br><br><br><br><br><br>
 <h4 align="center">Année universitaire 2023/2024</h4><br><br>
 
 # Table of Contents
