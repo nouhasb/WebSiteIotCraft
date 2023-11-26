@@ -26,7 +26,9 @@
     1. [Java Enterprise Edition (JEE)](#java-enterprise-edition-jee)
     2. [Eclipse IDE](#eclipse-ide)
     3. [MySQL Database](#mysql-database)
-   4. [Apache Tomcat](#apache-tomcat)
+    4. [Apache Tomcat](#apache-tomcat)
+    5. [Bibliothèques Java](#bibliothèques-java)
+    6. [Apache Maven](#apache-maven)
 4. [Frontend](#frontend)
     1. [Technologies Utilisées](#technologies-utilisées)
     2. [Pages Développées](#pages-développées)
@@ -118,6 +120,24 @@
 ## Apache Tomcat
 - **Description :** Apache Tomcat est un serveur web et un conteneur de servlet open-source. Il implémente les spécifications Java Servlet, JavaServer Pages (JSP), et Java Expression Language (EL).
 - **Rôle dans le Projet :** Tomcat est utilisé comme serveur d'application pour déployer et exécuter l'application web JEE IoTCraft. Il gère les demandes HTTP et assure le bon fonctionnement de l'application.
+## Bibliothèques Java
+
+- **Description :** Les bibliothèques Java sont des ensembles de classes et d'interfaces pré-écrites qui fournissent des méthodes et des services pour diverses fonctionnalités, allant de la manipulation de bases de données à la sécurité des applications.
+
+- **Rôle dans le Projet :** Dans le projet IoTCraft, différentes bibliothèques Java sont utilisées pour faciliter le développement et renforcer la fonctionnalité de l'application. Exemples de bibliothèques utilisées :
+
+  - **MySQL Connector/J :** Un pilote JDBC pour MySQL. Il permet à l'application de se connecter et d'interagir avec la base de données MySQL, facilitant ainsi les opérations de stockage et de récupération des données.
+
+  - **Jakarta EE :** Fournit un ensemble de spécifications pour le développement d'applications d'entreprise, incluant des fonctionnalités comme la gestion des transactions et la persistance des données. Dans IoTCraft, Jakarta EE est utilisé pour structurer l'application selon les standards de l'industrie et pour gérer efficacement les interactions entre les différentes couches de l'application.
+
+  - **Bcrypt :** Une bibliothèque pour le hachage de mots de passe. Elle est utilisée pour renforcer la sécurité de l'application en assurant que les mots de passe des utilisateurs sont stockés de manière sécurisée.
+## Apache Maven
+
+- **Description :** Apache Maven est un outil de gestion de projet et de compréhension logicielle. Utilisant le concept de modèle de projet objet (POM), Maven gère la construction, le reporting et la documentation du projet à partir d'une information centrale.
+
+- **Rôle dans le Projet :** Dans IoTCraft, Maven est essentiel pour gérer les dépendances du projet, automatiser le processus de construction et assurer la cohérence entre les environnements de développement et de production. Grâce à Maven, l'intégration et la gestion des bibliothèques tierces comme MySQL Connector/J, Jakarta EE, et Bcrypt sont grandement simplifiées. Il permet d'ajouter, de mettre à jour et de gérer facilement ces bibliothèques dans le projet, en assurant que toutes les dépendances sont résolues et maintenues de manière cohérente.
+ 
+
 # Frontend
 ## Technologies Utilisées
 - **HTML**
