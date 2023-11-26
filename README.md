@@ -23,13 +23,32 @@ Réalisé par : <br>
    2. [Fonctionnalités Utilisateur](#fonctionnalités-utilisateur)
    3. [Fonctionnalités Administrateur](#fonctionnalités-administrateur)
 3. [Outils Utilisés](#outils-utilisés)
-    1. [Java Enterprise Edition (JEE)](#Java Enterprise Edition (JEE))
-    2. [Fonctionnalités Utilisateur](#fonctionnalités-utilisateur)
-    3. [Fonctionnalités Administrateur](#fonctionnalités-administrateur)
-5. [Frontend](#frontend)
-6. [Backend](#backend)
-7. [Tests et Validation](#tests-et-validation)
-8. [Conclusion](#conclusion)
+    1. [Java Enterprise Edition (JEE)](#java-enterprise-edition-jee)
+    2. [Eclipse IDE](#eclipse-ide)
+    3. [MySQL Database](#mysql-database)
+   4. [Apache Tomcat](#apache-tomcat)
+4. [Frontend](#frontend)
+    1. [Technologies Utilisées](#technologies-utilisées)
+    2. [Pages Développées](#pages-développées)
+        1. [Page d'Accueil (Home)](#page-daccueil-home)
+        2. [Page de Connexion (Sign In)](#page-de-connexion-sign-in)
+        3. [Page d'Inscription (Sign Up)](#page-dinscription-sign-up)
+        4. [Espace Utilisateur](#espace-utilisateur)
+        5. [Espace Administrateur](#espace-administrateur)
+5. [Backend](#backend)
+     1. [Gestion des Utilisateurs](#gestion-des-utilisateurs)
+      1. [Établissement de la Connexion avec MySQL](#établissement-de-la-connexion-avec-mysql)
+      2. [Gestion de la Table des Utilisateurs](#gestion-de-la-table-des-utilisateurs)
+      3. [Inscription d'un Utilisateur (Sign Up)](#inscription-dun-utilisateur-sign-up)
+      4. [Connexion d'un Utilisateur (Sign In)](#connexion-dun-utilisateur-sign-in)
+      5. [Espace Utilisateur](#espace-utilisateur)
+   2. [Gestion des Projets](#gestion-des-projets)
+      1. [Gestion de la Table des Projets](#gestion-de-la-table-des-projets)
+      2. [Ajout de Projets par l'Utilisateur](#ajout-de-projets-par-lutilisateur)
+      3. [Ajout, Modification et Suppression de Projets par l'Administrateur](#ajout-modification-et-suppression-de-projets-par-ladministrateur)
+      4. [Page d'Accueil Personnalisée](#page-daccueil-personnalisée)
+6. [Tests et Validation](#tests-et-validation)
+7. [Conclusion](#conclusion)
 
 # Introduction Générale
 <p align="justify">
@@ -81,27 +100,103 @@ Réalisé par : <br>
 - L'administrateur peut consulter la page des projets pour avoir une vue d'ensemble de tous les projets disponibles sur la plateforme.
 
 # Outils Utilisés
-#### Java Enterprise Edition (JEE) :
+## Java Enterprise Edition (JEE)
+- **Description :** JEE est une spécification Java dédiée au développement d'applications d'entreprise. Il fournit des API pour les fonctionnalités telles que la gestion des transactions, la persistance des données, et les services web.
+- **Rôle dans le Projet :** JEE est le cadre principal utilisé pour le développement de l'application web IoTCraft. Il offre une architecture robuste pour gérer les défis spécifiques de l'Internet des Objets.
 
-- Description :JEE est une spécification Java dédiée au développement d'applications d'entreprise. Il fournit des API pour les fonctionnalités telles que la gestion des transactions, la persistance des données, et les services web.
-- Rôle dans le Projet : JEE est le cadre principal utilisé pour le développement de l'application web IoTCraft. Il offre une architecture robuste pour gérer les défis spécifiques de l'Internet des Objets.
-#### Eclipse IDE :
+## Eclipse IDE
+- **Description :** Eclipse est un environnement de développement intégré (IDE) open-source largement utilisé pour le développement Java. Il offre des fonctionnalités avancées telles que l'édition de code, le débogage, et la gestion de projets.
+- **Rôle dans le Projet :** Eclipse sert d'IDE principal pour le développement de l'application IoTCraft. Il offre une interface conviviale et des outils puissants pour faciliter le processus de développement.
 
-- Description : Eclipse est un environnement de développement intégré (IDE) open-source largement utilisé pour le développement Java. Il offre des fonctionnalités avancées telles que l'édition de code, le débogage, et la gestion de projets.
-- Rôle dans le Projet : Eclipse sert d'IDE principal pour le développement de l'application IoTCraft. Il offre une interface conviviale et des outils puissants pour faciliter le processus de développement.
-#### MySQL Database :
+## MySQL Database
+- **Description :** MySQL est un système de gestion de base de données relationnelle open-source. Il est largement utilisé pour la gestion efficace des données dans les applications web.
+- **Rôle dans le Projet :** MySQL est utilisé comme système de gestion de base de données pour stocker les informations relatives aux utilisateurs, aux projets, et aux interactions sur la plateforme IoTCraft.
 
-- Description : MySQL est un système de gestion de base de données relationnelle open-source. Il est largement utilisé pour la gestion efficace des données dans les applications web.
-- Rôle dans le Projet : MySQL est utilisé comme système de gestion de base de données pour stocker les informations relatives aux utilisateurs, aux projets, et aux interactions sur la plateforme IoTCraft.
-#### Apache Tomcat :
-
-- Description : Apache Tomcat est un serveur web et un conteneur de servlet open-source. Il implémente les spécifications Java Servlet, JavaServer Pages (JSP), et Java Expression Language (EL).
-- Rôle dans le Projet : Tomcat est utilisé comme serveur d'application pour déployer et exécuter l'application web JEE IoTCraft. Il gère les demandes HTTP et assure le bon fonctionnement de l'application.
+## Apache Tomcat
+- **Description :** Apache Tomcat est un serveur web et un conteneur de servlet open-source. Il implémente les spécifications Java Servlet, JavaServer Pages (JSP), et Java Expression Language (EL).
+- **Rôle dans le Projet :** Tomcat est utilisé comme serveur d'application pour déployer et exécuter l'application web JEE IoTCraft. Il gère les demandes HTTP et assure le bon fonctionnement de l'application.
 # Frontend
+## Technologies Utilisées
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **JavaServer Pages (JSP)**
 
+## Pages Développées
+
+### Page d'Accueil (Home)
+La page d'accueil est la première interface que les visiteurs du site rencontrent. Elle offre une navigation claire pour les utilisateurs et les administrateurs. Les éléments clés de cette page incluent :
+- Des boutons pour accéder aux différents projets disponibles sur la plateforme.
+- Des options de connexion et d'inscription pour les utilisateurs non connectés.
+- Des liens vers les pages dédiées pour la connexion (Sign In) et l'inscription (Sign Up).
+
+### Page de Connexion (Sign In)
+La page de connexion permet aux utilisateurs enregistrés d'accéder à leur compte. Elle comprend les éléments suivants :
+- Un formulaire de connexion avec des champs pour l'adresse e-mail et le mot de passe.
+- Un lien pour réinitialiser le mot de passe en cas d'oubli.
+- Un bouton de connexion permettant d'accéder à l'espace utilisateur.
+
+### Page d'Inscription (Sign Up)
+La page d'inscription offre aux nouveaux utilisateurs la possibilité de créer un compte sur la plateforme. Elle inclut :
+- Un formulaire d'inscription avec des champs pour le nom, le prénom, l'adresse e-mail, et le mot de passe.
+- Des indications sur les exigences de création du mot de passe.
+- Un bouton d'inscription pour finaliser le processus.
+
+### Espace Utilisateur
+Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure :
+- une page  qui permet d'ajouter de nouveaux projets.
+- Des informations sur le profil de l'utilisateur.
+
+### Espace Administrateur
+L'espace administrateur est réservé aux utilisateurs ayant des privilèges d'administration. Il offre des fonctionnalités telles que :
+- Page de gestion des projets existants (ajout, édition, suppression).
+- page pourL'approbation des projets soumis par les utilisateurs.
+- Page pour La consultation de la liste complète des projets sur la plateforme.
+
+Ces pages sont développées en utilisant HTML, CSS, et JavaScript, avec l'intégration de JavaServer Pages (JSP) pour dynamiser le contenu et interagir avec le backend développé avec Java Enterprise Edition (JEE).
 
 # Backend
+## Gestion des Utilisateurs
 
+Dans la partie backend de notre application, la gestion des utilisateurs est cruciale pour assurer une expérience utilisateur fluide et sécurisée. Voici un aperçu détaillé de cette fonctionnalité :
+
+### Établissement de la Connexion avec MySQL
+
+Nous avons mis en place des classes Java dédiées, notamment `DBConnector`, qui permettent d'établir une connexion sécurisée avec notre base de données MySQL. Ces classes gèrent la configuration de la connexion et facilitent les interactions avec la base de données.
+
+### Gestion de la Table des Utilisateurs
+
+Nous utilisons une table utilisateur avec des champs tels que `id`, `firstname`, `lastname`, `email`, et un mot de passe haché. La classe `UserDAOImpl` est spécifiquement conçue pour gérer les opérations sur cette table, notamment la méthode `addUser(User user)` pour ajouter un nouvel utilisateur.
+
+### Inscription d'un Utilisateur (Sign Up)
+
+Lorsqu'un utilisateur s'inscrit, les données sont collectées via la servlet `SignUpServlet`. Nous utilisons la bibliothèque JBCrypt pour sécuriser le mot de passe en le hachant. Si l'email existe déjà dans la base de données, l'utilisateur est redirigé vers la page d'inscription avec un message explicatif.
+
+### Connexion d'un Utilisateur (Sign In)
+
+La connexion d'un utilisateur est gérée par la servlet `SignInServlet`, qui vérifie les informations fournies par l'utilisateur par rapport à celles enregistrées dans la base de données. Des messages d'erreur appropriés sont renvoyés si nécessaire, sinon l'utilisateur est dirigé vers une page utilisateur personnalisée.
+
+### Espace Utilisateur
+
+Une fois connecté, l'utilisateur accède à un espace personnalisé qui peut inclure :
+- La possibilité d'ajouter de nouveaux projets.
+- Des informations sur le profil de l'utilisateur.
+
+## Gestion des Projets
+
+La gestion des projets constitue une autre facette essentielle de notre backend. Elle permet aux utilisateurs d'ajouter, d'éditer, et de consulter des projets sur la plateforme IoT. Voici une vue détaillée de cette fonctionnalité :
+
+### Gestion de la Table des Projets
+
+Nous avons créé une table des projets qui enregistre des détails tels que `id`, `nom`, `description`, `composants`, et d'autres informations pertinentes. La classe `ProjectDAOImpl` offre des méthodes pour ajouter, éditer, et supprimer des projets.
+
+### Ajout de Projets par l'Utilisateur
+
+Une servlet dédiée, `AddProjectServlet`, gère le processus d'ajout de nouveaux projets. Les détails du projet, tels que la description, les composants, et une image illustrative, sont récupérés via cette servlet. Ces informations sont ensuite ajoutées à la table des projets dans la base de données.
+
+### Page d'Accueil Personnalisée
+
+Une fois connecté, l'utilisateur est dirigé vers une page d'accueil personnalisée où son nom est affiché. À partir de cette page, l'utilisateur peut ajouter de nouveaux projets ou consulter les projets existants sur la plateforme IoT.
 
 # Tests et Validation
 
