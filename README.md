@@ -223,10 +223,10 @@ L'administrateur peut supprimer un projet en utilisant la méthode `deleteUProje
 
 ## Gestion des Recherches
 
-Lorsqu'un utilisateur effectue une recherche sur le site IotCraft, la servlet SearchServlet entre en jeu pour traiter cette requête. Cette servlet agit comme un intermédiaire entre l'interface utilisateur et la base de données.
+Lorsqu'un utilisateur effectue une recherche sur le site IotCraft, la servlet `SearchServlet` entre en jeu pour traiter cette requête. Cette servlet agit comme un intermédiaire entre l'interface utilisateur et la base de données.
 
 ### Fonctionnement 
-La servlet récupère la valeur de recherche entrée par l'utilisateur et utilise une méthode avancée de la classe ProjectDaoImpl. Cette méthode exécute une requête SQL basée sur la clause LIKE, permettant des résultats flexibles même avec des termes de recherche partiels.
+La servlet récupère la valeur de recherche entrée par l'utilisateur et utilise une méthode avancée de la classe `ProjectDaoImpl`. Cette méthode exécute une requête SQL basée sur la clause LIKE, permettant des résultats flexibles même avec des termes de recherche partiels.
 
 ### Résultats 
 Si des projets correspondent à la recherche, ils sont affichés à l'utilisateur. En cas d'absence de résultats, l'utilisateur est redirigé vers une page d'erreur.
