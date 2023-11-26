@@ -68,7 +68,14 @@ Réalisé par : <br>
 - Ils peuvent fournir des détails tels que la description du projet, la liste des composants utilisés, des instructions détaillées, et une image pour illustrer le projet.
 
 ## Fonctionnalités Administrateur
-
+- L'administrateur a un compte spécifique qui lui permet de se connecter à une interface dédiée.
+- Ajout de Projets : L'administrateur a la possibilité d'ajouter de nouveaux projets à la plateforme.
+- Édition de Projets : Il peut modifier les détails des projets existants, y compris la description, les composants, et les instructions.
+- Suppression de Projets : L'administrateur peut supprimer des projets du système si nécessaire.
+- Lorsqu'un utilisateur soumet un nouveau projet, l'administrateur peut le passer en revue.
+- Il a la possibilité d'approuver le projet s'il correspond aux normes de la plateforme.
+- Si un projet soumis ne respecte pas les règles ou les normes, l'administrateur peut le supprimer de la plateforme.
+- L'administrateur peut consulter la page des projets pour avoir une vue d'ensemble de tous les projets disponibles sur la plateforme.
 
 # Outils Utilisés
 
