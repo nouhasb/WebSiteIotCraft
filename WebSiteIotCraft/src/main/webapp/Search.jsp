@@ -37,8 +37,8 @@ if (loggedIn == null || loggedIn == false) {
              <a href='/SearchSe'><button class="btn" type="submit"><i class="fas fa-search"></i></button></a>
          </form>
 		<nav class="navbar">
-			<a href="home.jsp" class="butt">Home</a> <a href="url" class="butt" >Project</a>
-			<a href="login.jsp" class="butt">Sign up</a> <a href="Signin.jsp"
+			<a href="Home.jsp" class="butt">Home</a> <a href="url" class="butt" >Project</a>
+			<a href="SignUp.jsp" class="butt">Sign up</a> <a href="SignIn.jsp"
 				class="butt">Sign in</a>
 		</nav>
 	</header>

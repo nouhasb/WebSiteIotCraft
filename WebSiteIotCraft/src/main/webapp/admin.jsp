@@ -92,7 +92,7 @@ request.setAttribute("projectsp", pendingProjectsList);
             <td><%= project.getStepsp() %></td>
             <td>
                 <% if(project.getImagep() != null && !project.getImagep().isEmpty()) { %>
-                     <img src="uploads/<%= project.getImagep() %>" alt="Project Image" style="max-width: 60px; max-height: 60px;" />
+                     <img src="projetimage/<%= project.getImagep() %>" alt="Project Image" style="max-width: 60px; max-height: 60px;" />
                 <% } else { %>
                     No Image
                 <% } %>
